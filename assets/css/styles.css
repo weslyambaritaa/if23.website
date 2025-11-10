@@ -4,14 +4,14 @@
 /*===== VARIABLES CSS =====*/
 /*=== Colores ===*/
 :root {
-  --first-color: #0396A6;
+  --first-color: #0396a6;
   --dark-color: #000;
-  --white-color: #F2F2F2;
+  --white-color: #f2f2f2;
 }
 
 /*=== Fuente y tipografia ===*/
 :root {
-  --body-font: 'Open Sans', sans-serif;
+  --body-font: "Open Sans", sans-serif;
   --biggest-font-size: 3.5rem;
   --h2-font-size: 1.25rem;
   --normal-font-size: 0.938rem;
@@ -35,9 +35,11 @@
 }
 
 /*===== BASE =====*/
-*, ::before, ::after {
+*,
+::before,
+::after {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -49,7 +51,29 @@ body {
   font-family: var(--body-font);
 }
 
-h1, h2, h3, p {
+.body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* PASTIKAN MAIN MENAMPILKAN SEMUA CHILD SECARA VERTIKAL */
+main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* PASTIKAN SETIAP SECTION MENJADI BLOCK ELEMENT */
+section {
+  display: block;
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+p {
   margin: 0;
 }
 
@@ -58,7 +82,6 @@ ul {
   padding: 0;
   list-style: none;
 }
-
 
 a {
   text-decoration: none;
@@ -74,7 +97,7 @@ img {
   height: auto;
 }
 
-nav ul li a:hover{
+nav ul li a:hover {
   color: rgb(122, 162, 185);
   border-bottom: 2px solid rgb(122, 162, 185);
 }
@@ -91,10 +114,9 @@ nav ul li a:hover{
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #6e6b6bb8; 
+  background-color: #6e6b6bb8;
   z-index: var(--z-modal);
 }
-
 
 /* .l-header {
   width: 100%;
@@ -112,11 +134,11 @@ nav ul li a:hover{
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   font-weight: bold;
 }
 
@@ -131,8 +153,8 @@ nav ul li a:hover{
     padding: 2rem;
     text-align: center;
     z-index: var(--z-fixed);
-    -webkit-transition: .3s;
-    transition: .3s;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
   }
 }
 
@@ -195,15 +217,16 @@ nav ul li a:hover{
   z-index: var(--z-fixed);
 }
 
-.home__title, .home__subtitle {
+.home__title,
+.home__subtitle {
   position: absolute;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   color: var(--white-color);
 }
 
@@ -228,8 +251,8 @@ nav ul li a:hover{
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-size: 1.5rem;
   z-index: var(--z-modal);
 }
@@ -255,14 +278,14 @@ nav ul li a:hover{
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .section__data {
@@ -277,7 +300,7 @@ nav ul li a:hover{
 
 .section__img {
   width: 285px;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
 
 /*===== MEDIA QUERIES =====*/
@@ -306,8 +329,8 @@ nav ul li a:hover{
   .section {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     margin-left: auto;
     margin-right: auto;
   }
@@ -326,9 +349,6 @@ nav ul li a:hover{
   }
 }
 
-
-
-
 /*=============== VARIABLES CSS ===============*/
 :root {
   /*========== Colors ==========*/
@@ -343,14 +363,14 @@ nav ul li a:hover{
   /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "Poppins", sans-serif;
   --h2-font-size: 1.25rem;
-  --small-font-size: .813rem;
+  --small-font-size: 0.813rem;
 }
 
 /*========== Responsive typography ==========*/
 @media screen and (min-width: 1120px) {
   :root {
     --h2-font-size: 1.5rem;
-    --small-font-size: .875rem;
+    --small-font-size: 0.875rem;
   }
 }
 
@@ -400,7 +420,7 @@ img {
   width: 280px;
   background-color: var(--container-color);
   padding: 1.5rem 2rem;
-  box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
+  box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.15);
   border-radius: 1rem;
   position: absolute;
   bottom: -9rem;
@@ -414,21 +434,21 @@ img {
 .card__description {
   display: block;
   font-size: var(--small-font-size);
-  margin-bottom: .25rem;
+  margin-bottom: 0.25rem;
 }
 
 .card__title {
   font-size: var(--h2-font-size);
   font-weight: 500;
   color: var(--title-color);
-  margin-bottom: .75rem;
+  margin-bottom: 0.75rem;
 }
 
-.card__cantik{
+.card__cantik {
   font-size: var(--h2-font-size);
   font-weight: 500;
   color: var(--title-color);
-  margin-bottom: .75rem;
+  margin-bottom: 0.75rem;
 }
 
 .card__button {
@@ -448,7 +468,7 @@ img {
 .card__article:hover .card__data {
   animation: show-data 1s forwards;
   opacity: 1;
-  transition: opacity .3s;
+  transition: opacity 0.3s;
 }
 
 .card__article:hover {
@@ -487,7 +507,7 @@ img {
     transform: translateY(-10rem);
   }
   100% {
-    transform: translateY(.5rem);
+    transform: translateY(0.5rem);
   }
 }
 
@@ -525,7 +545,7 @@ img {
 /* For large devices */
 @media screen and (min-width: 1120px) {
   .container {
-    height: 100vh;
+    /* height: 100vh; */
   }
 
   .card__container {
@@ -540,7 +560,7 @@ img {
   }
 }
 
-.l-section img{
+.l-section img {
   width: 40%;
 }
 
@@ -551,18 +571,16 @@ img {
   background-size: cover;
 } */
 
-
-
 .card__cantik {
   font-weight: bold;
 }
 
-.card__data a{
+.card__data a {
   color: #d51274;
   font-weight: bold;
 }
 
-.card__data img{
+.card__data img {
   width: 45px;
 }
 
@@ -575,6 +593,145 @@ img {
   filter: grayscale(50%);
 }
 
+.classof {
+  font-size: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+}
+
+.member {
+  padding: 20px;
+  background-color: #f1f1f1;
+  margin-bottom: 40px; /* Jarak ke galeri */
+}
+
+.gallery {
+  padding: 20px;
+  background-color: #000000;
+  text-align: center;
+  width: 100vw;
+  height: 60vmin;
+  display: flex;
+  gap: 5px;
+}
+
+/* 1. Atur SECTION utama (pembungkus 'Semester 1', 'Semester 2', dst.) */
+/* Atur SECTION utama (pembungkus 'Semester 1', 'Semester 2', dst.) */
+section.gallery {
+  padding: 20px;
+  background-color: #000000; /* <-- Ini mengatur latar belakang jadi hitam */
+  text-align: center;
+  width: 100%; 
+  box-sizing: border-box; 
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  min-height: 500vh;
+}
+
+/* 2. Atur setiap DIV galeri (baris gambar) */
+/* Kita targetkan div.gallery YANG ADA DI DALAM section.gallery */
+section.gallery > div.gallery {
+  width: 90vw; /* Beri sedikit margin di samping */
+  max-width: 1200px; /* Batas lebar maksimum di layar besar */
+  height: 60vmin;
+  display: flex; /* Ini membuat gambar (img) di dalamnya berjejer */
+  gap: 5px;
+  margin-top: 10px; /* Jarak dari H2 di atasnya */
+  margin-bottom: 20px; /* Jarak ke H2 berikutnya */
+
+  /* Properti di bawah ini tidak perlu di-inherit dari section */
+  padding: 0;
+  background-color: transparent;
+}
+
+.gallery img {
+  height: 100%;
+  flex:1;
+  object-fit: cover;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+.gallery img:hover{
+  flex: 4;
+}
+
+/* .gallery-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.gallery-item {
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.gallery-item img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+} */
+
+/* ===== CSS UNTUK GALERI SLIDER ===== */
+
+.slider-wrapper {
+  position: relative; /* Diperlukan untuk tombol navigasi */
+  max-width: 900px; /* Atur lebar slider Anda */
+  margin: 20px auto; /* Pusatkan slider di dalam section.gallery */
+  overflow: hidden; /* Sembunyikan gambar yang "meluber" */
+  border-radius: 8px; /* Estetika agar sudutnya melengkung */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.slider {
+  display: flex;
+  /* Penting: Buat slider bisa digulir (scroll) ke samping */
+  overflow-x: auto;
+
+  /* Ini adalah "magic" yang membuat tautan #slide-1 berfungsi */
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth; /* Animasi scrolling yang halus */
+  -webkit-overflow-scrolling: touch; /* Scrolling halus di iOS */
+}
+
+.slider img {
+  width: 100%; /* Setiap gambar memenuhi 100% lebar wrapper */
+  flex-shrink: 0; /* Pastikan gambar tidak menyusut */
+  scroll-snap-align: start; /* "Snap" ke awal setiap gambar */
+}
+
+.slider-nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Jarak antar tombol navigasi */
+  position: absolute; /* Posisikan tombol di atas slider */
+  bottom: 20px; /* Beri jarak 20px dari bawah */
+  left: 50%;
+  transform: translateX(-50%); /* Trik untuk memusatkan secara horizontal */
+}
+
+.slider-nav a {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%; /* Buat jadi lingkaran */
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+}
+
+.slider-nav a:hover {
+  background-color: #fff;
+}
 
 .classof {
   font-size: 60px;
@@ -582,65 +739,14 @@ img {
   justify-content: center;
   align-items: center;
   height: 10vh;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: bold;
+  margin-top: 5rem; /* <-- Tambahkan ini untuk memberi jarak dari atas */
 }
 
-.slider-wrapper {
-  position: relative;
-  max-width: 50rem;
-  margin: 0 auto;
+/* Atur warna teks H1 dan H2 di dalam galeri */
+section.gallery h1,
+section.gallery h2 {
+  color: #FFFFFF; /* atau color: white; */
 }
-
-.slider {
-  display: flex;
-  aspect-ratio: 16 / 9;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, .25);
-}
-
-.slider img{
-  flex: 1 0 100%;
-  scroll-snap-align: start;
-  object-fit: cover;
-  object-fit: fill;
-}
-
-.slider-nav{
-  display: flex;
-  column-gap: 1rem;
-  position: absolute;
-
-  bottom: 1.25rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
-}
-
-.slider-nav a{
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  background-color: #fff;
-  opacity: 0.75;
-  transition: opacity ease 250ms;
-}
-
-.slider-nav a:hover{
-  opacity: 1;
-}
-
-.parent-element {
-  position: relative;
-  height: 500px; /* Misalnya tinggi 500px */
-}
-
-.gallery {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-
 
