@@ -1,0 +1,753 @@
+/*===== GOGGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+/*===== VARIABLES SCSS =====*/
+/*===== VARIABLES CSS =====*/
+/*=== Colores ===*/
+:root {
+  --first-color: #0396a6;
+  --dark-color: #000;
+  --white-color: #f2f2f2;
+}
+
+/*=== Fuente y tipografia ===*/
+:root {
+  --body-font: "Open Sans", sans-serif;
+  --biggest-font-size: 3.5rem;
+  --h2-font-size: 1.25rem;
+  --normal-font-size: 0.938rem;
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --biggest-font-size: 7rem;
+    --h2-font-size: 1.5rem;
+    --normal-font-size: 1rem;
+  }
+}
+
+/*=== z index ===*/
+:root {
+  --z-back: -10;
+  --z-normal: 1;
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+}
+
+/*===== BASE =====*/
+*,
+::before,
+::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--body-font);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* PASTIKAN MAIN MENAMPILKAN SEMUA CHILD SECARA VERTIKAL */
+main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* PASTIKAN SETIAP SECTION MENJADI BLOCK ELEMENT */
+section {
+  display: block;
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 600;
+  padding: 3px 0px;
+  transition: all;
+  transition-duration: 350ms;
+  border-bottom: 2px solid rgba(122, 162, 185, 0);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+nav ul li a:hover {
+  color: rgb(122, 162, 185);
+  border-bottom: 2px solid rgb(122, 162, 185);
+}
+
+/*===== LAYOUT =====*/
+.bd-grid {
+  max-width: 1200px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.l-header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #6e6b6bb8;
+  z-index: var(--z-modal);
+}
+
+/* .l-header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  z-index: var(--z-modal);
+} */
+
+/*===== NAVBAR =====*/
+.nav {
+  height: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .nav__menu {
+    position: fixed;
+    left: 0%;
+    top: -100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    height: 40%;
+    padding: 2rem;
+    text-align: center;
+    z-index: var(--z-fixed);
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+}
+
+.nav__logo {
+  color: var(--white-color);
+}
+
+.nav__item {
+  margin-bottom: 2rem;
+}
+
+.nav__link {
+  color: var(--white-color);
+}
+
+.nav__toggle {
+  font-size: 1.5rem;
+  color: var(--white-color);
+  cursor: pointer;
+}
+
+/*=== Show menu ===*/
+.show {
+  top: 3rem;
+}
+
+/*===== HOME =====*/
+.home {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.home__parallax {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.home__parallax-img1 {
+  background-image: url("/assets/img/imgm1.png");
+  z-index: var(--z-normal);
+}
+
+.home__parallax-img2 {
+  background-image: url("/assets/img/imgm2.png");
+  z-index: var(--z-tooltip);
+}
+
+.home__parallax-img3 {
+  background-image: url("/assets/img/imgm3.png");
+  z-index: var(--z-fixed);
+}
+
+.home__parallax-img4 {
+  background-image: url("/assets/img/imgm4.png");
+  z-index: var(--z-fixed);
+}
+
+.home__title,
+.home__subtitle {
+  position: absolute;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: var(--white-color);
+}
+
+.home__title {
+  top: 32%;
+  font-size: var(--biggest-font-size);
+  z-index: var(--z-normal);
+}
+
+.home__subtitle {
+  top: 44%;
+  font-size: var(--h2-font-size);
+  font-weight: bold;
+  z-index: var(--z-tooltip);
+}
+
+.home__scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  z-index: var(--z-modal);
+}
+
+.home__scroll .bx-mouse {
+  color: var(--white-color);
+}
+
+/*===== SECTION =====*/
+.l-section {
+  background-color: var(--dark-color);
+}
+
+.section {
+  height: 100vh;
+  max-width: 950px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding: 2rem 0;
+  color: var(--white-color);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.section__data {
+  margin-bottom: 3rem;
+}
+
+.section__title {
+  font-size: var(--h2-font-size);
+  color: var(--first-color);
+  margin-bottom: 1rem;
+}
+
+.section__img {
+  width: 285px;
+  border-radius: 0.5rem;
+}
+
+/*===== MEDIA QUERIES =====*/
+@media screen and (min-width: 760px) {
+  .nav {
+    height: 4rem;
+  }
+  .nav__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .nav__item {
+    margin-right: 3rem;
+    margin-bottom: 0;
+  }
+  .nav__toggle {
+    display: none;
+  }
+  .home__title {
+    top: 27%;
+  }
+  .home__subtitle {
+    top: 50%;
+  }
+  .section {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .section__text {
+    padding-right: 4rem;
+  }
+  .section__img {
+    width: 470px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .bd-grid {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(82, 60%, 28%);
+  --title-color: hsl(0, 0%, 15%);
+  --text-color: hsl(0, 0%, 35%);
+  --body-color: hsl(0, 0%, 95%);
+  --container-color: hsl(0, 0%, 100%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Poppins", sans-serif;
+  --h2-font-size: 1.25rem;
+  --small-font-size: 0.813rem;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1120px) {
+  :root {
+    --h2-font-size: 1.5rem;
+    --small-font-size: 0.875rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+img {
+  display: block;
+  max-width: 90%;
+  height: auto;
+}
+
+/*=============== CARD ===============*/
+.container {
+  display: grid;
+  place-items: center;
+  margin-inline: 1.5rem;
+  padding-block: 7rem;
+}
+
+.card__container {
+  display: grid;
+  row-gap: 3rem;
+}
+
+.card__article {
+  position: relative;
+  overflow: hidden;
+}
+
+.card__img {
+  width: 328px;
+  border-radius: 1.5rem;
+  object-fit: cover;
+}
+
+.card__data {
+  width: 280px;
+  background-color: var(--container-color);
+  padding: 1.5rem 2rem;
+  box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.15);
+  border-radius: 1rem;
+  position: absolute;
+  bottom: -9rem;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  opacity: 0;
+  transition: opacity 1s 1s;
+}
+
+.card__description {
+  display: block;
+  font-size: var(--small-font-size);
+  margin-bottom: 0.25rem;
+}
+
+.card__title {
+  font-size: var(--h2-font-size);
+  font-weight: 500;
+  color: var(--title-color);
+  margin-bottom: 0.75rem;
+}
+
+.card__cantik {
+  font-size: var(--h2-font-size);
+  font-weight: 500;
+  color: var(--title-color);
+  margin-bottom: 0.75rem;
+}
+
+.card__button {
+  text-decoration: none;
+  font-size: var(--small-font-size);
+  font-weight: 500;
+  color: var(--first-color);
+}
+
+.card__button:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 1.4px;
+}
+
+/* Naming animations in hover */
+.card__article:hover .card__data {
+  animation: show-data 1s forwards;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.card__article:hover {
+  animation: remove-overflow 2s forwards;
+}
+
+.card__article:not(:hover) {
+  animation: show-overflow 2s forwards;
+}
+
+.card__article:not(:hover) .card__data {
+  animation: remove-data 1s forwards;
+}
+
+/* Card animation */
+@keyframes show-data {
+  50% {
+    transform: translateY(-10rem);
+  }
+  100% {
+    transform: translateY(-7rem);
+  }
+}
+
+@keyframes remove-overflow {
+  to {
+    overflow: initial;
+  }
+}
+
+@keyframes remove-data {
+  0% {
+    transform: translateY(-7rem);
+  }
+  50% {
+    transform: translateY(-10rem);
+  }
+  100% {
+    transform: translateY(0.5rem);
+  }
+}
+
+@keyframes show-overflow {
+  0% {
+    overflow: initial;
+    pointer-events: none;
+  }
+  50% {
+    overflow: hidden;
+  }
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 340px) {
+  .container {
+    margin-inline: 1rem;
+  }
+
+  .card__data {
+    width: 250px;
+    padding: 1rem;
+  }
+}
+
+/* For medium devices */
+@media screen and (min-width: 768px) {
+  .card__container {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1.5rem;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1120px) {
+  .container {
+    /* height: 100vh; */
+  }
+
+  .card__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .card__img {
+    width: 348px;
+  }
+  .card__data {
+    width: 316px;
+    padding-inline: 2.5rem;
+  }
+}
+
+.l-section img {
+  width: 40%;
+}
+
+/* .banner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+} */
+
+.card__cantik {
+  font-weight: bold;
+}
+
+.card__data a {
+  color: #d51274;
+  font-weight: bold;
+}
+
+.card__data img {
+  width: 45px;
+}
+
+.card__data img:active {
+  filter: grayscale(100%);
+}
+
+.card__data img:hover,
+.card__data img:active {
+  filter: grayscale(50%);
+}
+
+.classof {
+  font-size: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+}
+
+.member {
+  padding: 20px;
+  background-color: #f1f1f1;
+  margin-bottom: 40px; /* Jarak ke galeri */
+}
+
+.gallery {
+  padding: 20px;
+  background-color: #000000;
+  text-align: center;
+  width: 100vw;
+  height: 60vmin;
+  display: flex;
+  gap: 5px;
+}
+
+/* 1. Atur SECTION utama (pembungkus 'Semester 1', 'Semester 2', dst.) */
+/* Atur SECTION utama (pembungkus 'Semester 1', 'Semester 2', dst.) */
+section.gallery {
+  padding: 20px;
+  background-color: #000000; /* <-- Ini mengatur latar belakang jadi hitam */
+  text-align: center;
+  width: 100%; 
+  box-sizing: border-box; 
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  min-height: 500vh;
+}
+
+/* 2. Atur setiap DIV galeri (baris gambar) */
+/* Kita targetkan div.gallery YANG ADA DI DALAM section.gallery */
+section.gallery > div.gallery {
+  width: 90vw; /* Beri sedikit margin di samping */
+  max-width: 1200px; /* Batas lebar maksimum di layar besar */
+  height: 60vmin;
+  display: flex; /* Ini membuat gambar (img) di dalamnya berjejer */
+  gap: 5px;
+  margin-top: 10px; /* Jarak dari H2 di atasnya */
+  margin-bottom: 20px; /* Jarak ke H2 berikutnya */
+
+  /* Properti di bawah ini tidak perlu di-inherit dari section */
+  padding: 0;
+  background-color: transparent;
+}
+
+.gallery img {
+  height: 100%;
+  flex:1;
+  object-fit: cover;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+.gallery img:hover{
+  flex: 4;
+}
+
+/* .gallery-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.gallery-item {
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.gallery-item img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+} */
+
+/* ===== CSS UNTUK GALERI SLIDER ===== */
+
+.slider-wrapper {
+  position: relative; /* Diperlukan untuk tombol navigasi */
+  max-width: 900px; /* Atur lebar slider Anda */
+  margin: 20px auto; /* Pusatkan slider di dalam section.gallery */
+  overflow: hidden; /* Sembunyikan gambar yang "meluber" */
+  border-radius: 8px; /* Estetika agar sudutnya melengkung */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.slider {
+  display: flex;
+  /* Penting: Buat slider bisa digulir (scroll) ke samping */
+  overflow-x: auto;
+
+  /* Ini adalah "magic" yang membuat tautan #slide-1 berfungsi */
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth; /* Animasi scrolling yang halus */
+  -webkit-overflow-scrolling: touch; /* Scrolling halus di iOS */
+}
+
+.slider img {
+  width: 100%; /* Setiap gambar memenuhi 100% lebar wrapper */
+  flex-shrink: 0; /* Pastikan gambar tidak menyusut */
+  scroll-snap-align: start; /* "Snap" ke awal setiap gambar */
+}
+
+.slider-nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Jarak antar tombol navigasi */
+  position: absolute; /* Posisikan tombol di atas slider */
+  bottom: 20px; /* Beri jarak 20px dari bawah */
+  left: 50%;
+  transform: translateX(-50%); /* Trik untuk memusatkan secara horizontal */
+}
+
+.slider-nav a {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%; /* Buat jadi lingkaran */
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+}
+
+.slider-nav a:hover {
+  background-color: #fff;
+}
+
+.classof {
+  font-size: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  margin-top: 5rem; /* <-- Tambahkan ini untuk memberi jarak dari atas */
+}
+
+/* Atur warna teks H1 dan H2 di dalam galeri */
+section.gallery h1,
+section.gallery h2 {
+  color: #FFFFFF; /* atau color: white; */
+}
+
